@@ -120,7 +120,7 @@ const RegisterModal = () => {
                             hover:underline
                         "
                     >
-                        Log In
+                        Log in
                     </div>
                 </div>
             </div>
