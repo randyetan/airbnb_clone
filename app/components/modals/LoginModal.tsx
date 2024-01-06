@@ -32,12 +32,12 @@ const LoginModal = () => {
         handleSubmit,
         formState: {
             errors,
-        }
+        },
     } = useForm<FieldValues>({
         defaultValues: {
             email: '',
             password: ''
-        }
+        },
     });
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -59,7 +59,7 @@ const LoginModal = () => {
             if(callback?.error) {
                 toast.error(callback.error);
             }
-        })
+        });
     }
 
     const bodyContent = (
@@ -95,13 +95,13 @@ const LoginModal = () => {
                 outline
                 label="Continue with Google"
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
             />
             <Button 
                 outline
                 label="Continue with Github"
                 icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div
                 className="

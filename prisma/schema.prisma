@@ -18,7 +18,7 @@ model User {
   image String?
   hashedPassword String?
   createdAt DateTime @default(now())
-  udpatedAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt
   favoriteIds String[] @db.ObjectId
 
   accounts Account[]
@@ -36,7 +36,7 @@ model Account {
   access_token String? @db.String
   expires_at Int?
   token_type String?
-  scopre String?
+  scope String?
   id_token String? @db.String
   session_state String?
 
