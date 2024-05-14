@@ -25,7 +25,7 @@ interface ListingInfoProps {
     locationValue: string;
 }
 
-const ListingInfo:React.FC<ListingInfoProps> = ({
+const ListingInfo: React.FC<ListingInfoProps> = ({
     user,
     description,
     guestCount,

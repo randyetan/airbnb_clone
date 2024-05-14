@@ -1,7 +1,7 @@
 'use client';
 
 import { categories } from "@/app/components/navbar/Categories";
-import { SafeListing, SafeUser } from "@/app/types";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { Reservation } from "@prisma/client";
 import Container from "@/app/components/Container";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -9,7 +9,7 @@ import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { useRouter } from "next/navigation";
-import { differenceInCalendarDays, differenceInDays, eachDayOfInterval, endOfDay } from "date-fns";
+import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import toast from "react-hot-toast";
 import axios from "axios";
 import ListingReservation from "@/app/components/listings/ListingReservation";
@@ -21,15 +21,15 @@ const initialDateRange = {
     key: 'selection'
 };
 
-interface ListingCliengProps {
-    reservations?: Reservation[];
+interface ListingClientProps {
+    reservations?: SafeReservation[];
     listing: SafeListing & {
         user: SafeUser
     };
     currentUser?: SafeUser | null;
 }
 
-const ListingClient: React.FC<ListingCliengProps> = ({
+const ListingClient: React.FC<ListingClientProps> = ({
     listing,
     reservations = [],
     currentUser

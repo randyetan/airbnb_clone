@@ -14,7 +14,7 @@ interface ListingHeadProps {
     currentUser?: SafeUser | null;
 }
 
-const ListingHead:React.FC<ListingHeadProps> = ({
+const ListingHead: React.FC<ListingHeadProps> = ({
     title,
     locationValue,
     imageSrc,
