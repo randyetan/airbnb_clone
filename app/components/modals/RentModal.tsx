@@ -27,7 +27,7 @@ enum STEPS {
     PRICE = 5
 }
 
-const rentModal = () => {
+const RentModal = () => {
     const router = useRouter();
     const rentModal = useRentModal();
 
@@ -281,4 +281,4 @@ const rentModal = () => {
      );
 }
  
-export default rentModal;
+export default RentModal;
